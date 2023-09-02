@@ -13,7 +13,7 @@ function Categories() {
             setCategory(json.data.categories)
             )
         .catch(err => err.message)
-    }, [category])
+    }, category)
 
     const deleteCategory = (CategoryName) => {
         axios.delete('/api/delete-category', { data: { CategoryName }})
