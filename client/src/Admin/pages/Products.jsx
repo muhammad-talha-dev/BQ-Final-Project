@@ -10,7 +10,7 @@ function Products() {
     axios.get('/api/all-products')
     .then(json => setProducts(json.data.products))
     .catch(err => console.log(err))
-  }, [products])
+  }, products)
 
   const deleteProduct = (productName) => {
     axios.delete('/api/delete-products', { data: { productName } })
